@@ -12,7 +12,7 @@
       "type": "process",
       "problemMatcher": "$msCompile",
       "options": {
-        "cwd": "${workspaceFolder}/my-azure-function"
+        "cwd": "${workspaceFolder}/AsAzureFunctions"
       }
     },
     {
@@ -31,7 +31,7 @@
       },
       "problemMatcher": "$msCompile",
       "options": {
-        "cwd": "${workspaceFolder}/my-azure-function"
+        "cwd": "${workspaceFolder}/AsAzureFunctions"
       }
     },
     {
@@ -47,7 +47,7 @@
       "type": "process",
       "problemMatcher": "$msCompile",
       "options": {
-        "cwd": "${workspaceFolder}/my-azure-function"
+        "cwd": "${workspaceFolder}/AsAzureFunctions"
       }
     },
     {
@@ -64,14 +64,14 @@
       "dependsOn": "clean release",
       "problemMatcher": "$msCompile",
       "options": {
-        "cwd": "${workspaceFolder}/my-azure-function"
+        "cwd": "${workspaceFolder}/AsAzureFunctions"
       }
     },
     {
       "type": "func",
       "dependsOn": "build",
       "options": {
-        "cwd": "${workspaceFolder}/my-azure-function/bin/Debug/netcoreapp3.0"
+        "cwd": "${workspaceFolder}/AsAzureFunctions/bin/Debug/netcoreapp3.1"
       },
       "command": "host start",
       "isBackground": true,

@@ -52,7 +52,7 @@ RUN echo "deb [arch=amd64] https://packages.microsoft.com/repos/azure-cli/ $(lsb
     && apt-get install -y azure-cli
 
 # Install Azure Functions Core Tools v3
-ARG CORE_TOOLS_VERSION=3.0.2009
+ARG CORE_TOOLS_VERSION=3.0.2358
 RUN curl -s -L https://github.com/Azure/azure-functions-core-tools/releases/download/${CORE_TOOLS_VERSION}/Azure.Functions.Cli.linux-x64.${CORE_TOOLS_VERSION}.zip -o /tmp/afct3.zip
 RUN unzip -qq -d ~/azure-functions-core-tools /tmp/afct3.zip \
     && rm /tmp/afct3.zip
@@ -61,6 +61,9 @@ RUN cd ~/azure-functions-core-tools \
     && ln -s ~/azure-functions-core-tools/func /usr/bin/func
 # Opt out of Func CLI telemetry gathering
 #ENV FUNCTIONS_CORE_TOOLS_TELEMETRY_OPTOUT=true
+
+# Used by this application as part of the functionality
+CMD mkdir -p /mnt/data/availability
 
 # Switch back to dialog for any ad-hoc use of apt-get
 ENV DEBIAN_FRONTEND=dialog

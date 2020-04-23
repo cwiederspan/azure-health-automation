@@ -1,10 +1,18 @@
-# learn-azure-functions
-A hands-on approach to learning Azure Functions
+# Setup
 
-## References
+## Setup the SQL Analysis Service in Azure
 
-https://github.com/Azure/azure-functions-core-tools
+```bash
 
+
+```
+
+## Create the Azure Front Dorr Service in Azure
+
+```bash
+
+
+```
 
 ## Create a new Function
 

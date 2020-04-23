@@ -1,0 +1,124 @@
+https://management.azure.com/subscriptions/b9c770d1-cde9-4da3-ae40-95ce1a4fac0c/resourceGroups/cdw-analysisservices-20200401/providers/Microsoft.AnalysisServices/servers/cdwanalysisservices20200401/providers/Microsoft.ResourceHealth/availabilityStatuses/current?api-version=2017-07-01
+
+
+
+
+asazure://westus2.asazure.windows.net/asazuretestwestus2
+
+https://management.azure.com/subscriptions/b9c770d1-cde9-4da3-ae40-95ce1a4fac0c/resourceGroups/cdw-analysisservices-20200401/providers/Microsoft.AnalysisServices/servers/asazuretestwestus2/providers/Microsoft.ResourceHealth/availabilityStatuses/current?api-version=2017-07-01
+
+
+
+
+https://docs.microsoft.com/en-us/azure/service-health/resource-health-alert-arm-template-guide
+
+
+az ad sp create-for-rbac \
+ --name cdw-analysisservices-20200401-sp \
+ --role contributor \
+ --scopes /subscriptions/b9c770d1-cde9-4da3-ae40-95ce1a4fac0c/resourceGroups/cdw-analysisservices-20200401
+
+{
+  "appId": "d9874988-3a14-422e-addc-437b4967bcda",
+  "displayName": "cdw-analysisservices-20200401-sp",
+  "name": "http://cdw-analysisservices-20200401-sp",
+  "password": "27f7c393-c959-48f4-b0a2-fe5b65974757",
+  "tenant": "72f988bf-86f1-41af-91ab-2d7cd011db47"
+}
+
+
+
+az container create -g cdw-analysisservices-20200401 -n asazuretestsouthcentral -l southcentralus --image ateamsw/devcontainer:latest --command-line "tail -f /dev/null"
+
+az container create -g cdw-analysisservices-20200401 -n asazuretestwestus2 -l westus2 --image ateamsw/devcontainer:latest --command-line "tail -f /dev/null"
+
+az container exec -g cdw-analysisservices-20200401 -n asazuretestwestus2 --exec-command /bin/bash
+
+
+az webapp config storage-account add -g cdw-analysisservices-20200401 -n asazuretestwestus2 \
+  --custom-id func-state \
+  --storage-type AzureFiles \
+  --account-name asazuretestwestus2func \
+  --share-name func-state \
+  --access-key nVmJi7cWghJU3eZ9TRWzz+cWXQtfr1vrpy2N9WlVkPRSwJOS4gq2l8EnZOF9jQg0zB1o6/xcVIMuZ8Mha5DS2w== \
+  --mount-path /mnt/data/availability
+
+
+az webapp config storage-account add -g cdw-analysisservices-20200401 -n asazuretestsouthcentralus \
+  --custom-id func-state \
+  --storage-type AzureFiles \
+  --account-name asazureteststhcntlusfunc \
+  --share-name func-state \
+  --access-key iGZyO1KZk7SGuQb13XWpFA6N6i5Q1ljLYZOmbUxkembE7anBnSTifiIGf1rGfnHnWPOOgflpgeN3tsiUVX3x6Q== \
+  --mount-path /mnt/data/availability
+
+
+activityLogAlertName
+cdw-ssasresourcehealth-20200411
+
+
+actionGroupResourceId
+/subscriptions/b9c770d1-cde9-4da3-ae40-95ce1a4fac0c/resourceGroups/cdw-analysisservices-20200401/providers/microsoft.insights/actionGroups/cdw-ssasactiongroup-20200411
+
+
+alertScope
+/subscriptions/b9c770d1-cde9-4da3-ae40-95ce1a4fac0c/resourceGroups/cdw-analysisservices-20200401/providers/Microsoft.AnalysisServices/servers/cdwanalysisservices20200401
+
+
+
+az network front-door backend-pool backend remove -g cdw-analysisservices-20200401 -f cdw-analysisservices-20200401 --pool-name my-static-sites --index 1
+
+
+{
+    "id": "/subscriptions/b9c770d1-cde9-4da3-ae40-95ce1a4fac0c/resourcegroups/cdw-analysisservices-20200401/providers/microsoft.analysisservices/servers/cdwanalysisservices20200401/providers/Microsoft.ResourceHealth/availabilityStatuses/current",
+    "name": "current",
+    "type": "Microsoft.ResourceHealth/AvailabilityStatuses",
+    "location": "westus2",
+    "properties": {
+        "availabilityState": "Available",
+        "title": "Available",
+        "summary": "This server is running normally. There aren't any known Azure platform problems affecting this Analysis Services server.",
+        "reasonType": "",
+        "occuredTime": "2020-04-08T02:05:04Z",
+        "reasonChronicity": "Transient",
+        "reportedTime": "2020-04-08T02:17:25.9121415Z"
+    }
+}
+
+{
+    "id": "/subscriptions/b9c770d1-cde9-4da3-ae40-95ce1a4fac0c/resourcegroups/cdw-analysisservices-20200401/providers/microsoft.analysisservices/servers/cdwanalysisservices20200401/providers/Microsoft.ResourceHealth/availabilityStatuses/current",
+    "name": "current",
+    "type": "Microsoft.ResourceHealth/AvailabilityStatuses",
+    "location": "westus2",
+    "properties": {
+        "availabilityState": "Unavailable",
+        "title": "Unavailable",
+        "summary": "We are sorry, your Analysis Services server is unavailable. We're working to automatically recover your Analysis Services server and to determine the source of the problem. No additional action is required from you at this time.",
+        "reasonType": "Unplanned",
+        "occuredTime": "2020-04-08T02:18:28Z",
+        "reasonChronicity": "Transient",
+        "reportedTime": "2020-04-08T02:18:47.201386Z",
+        "resolutionETA": "2020-04-08T02:38:28Z"
+    }
+}
+
+{
+    "id": "/subscriptions/b9c770d1-cde9-4da3-ae40-95ce1a4fac0c/resourcegroups/cdw-analysisservices-20200401/providers/microsoft.analysisservices/servers/cdwanalysisservices20200401/providers/Microsoft.ResourceHealth/availabilityStatuses/current",
+    "name": "current",
+    "type": "Microsoft.ResourceHealth/AvailabilityStatuses",
+    "location": "westus2",
+    "properties": {
+        "availabilityState": "Unavailable",
+        "title": "",
+        "summary": "Server is paused. Resume the server to make it available. Server is paused. Resume the server to make it available.",
+        "reasonType": "Customer Initiated",
+        "rootCauseAttributionTime": "2020-04-08T02:18:28.62Z",
+        "occuredTime": "2020-04-08T02:18:28Z",
+        "reasonChronicity": "Transient",
+        "reportedTime": "2020-04-08T02:19:08.1383549Z",
+        "resolutionETA": "2020-04-08T02:38:28Z"
+    }
+}
+
+
+

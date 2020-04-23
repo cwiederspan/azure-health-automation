@@ -1,0 +1,52 @@
+{
+    "headers": {
+        "Connection": "Keep-Alive",
+        "Expect": "100-continue",
+        "Host": "prod-24.westus2.logic.azure.com",
+        "User-Agent": "IcMBroadcaster/1.0",
+        "X-CorrelationContext": "RkkKACgAAAACAAAAEADu893iPf+3S4kZlCdvFHTpAQAQAO6nzQctABRKpPtDZlG+VDY=",
+        "Content-Length": "1356",
+        "Content-Type": "application/json; charset=utf-8"
+    },
+    "body": {
+        "schemaId": "azureMonitorCommonAlertSchema",
+        "data": {
+            "essentials": {
+                "alertId": "/subscriptions/b9c770d1-cde9-4da3-ae40-95ce1a4fac0c/providers/Microsoft.AlertsManagement/alerts/07cda7ee-002d-4a14-a4fb-436651be5436",
+                "alertRule": "cdw-ssasresourcehealth-20200411",
+                "severity": "Sev4",
+                "signalType": "Activity Log",
+                "monitorCondition": "Fired",
+                "monitoringService": "Resource Health",
+                "alertTargetIDs": [
+                    "/subscriptions/b9c770d1-cde9-4da3-ae40-95ce1a4fac0c/resourcegroups/cdw-analysisservices-20200401/providers/microsoft.analysisservices/servers/cdwanalysisservices20200401"
+                ],
+                "originAlertId": "a3dc69d5-5778-4cc3-94b5-27bc98932155",
+                "firedDateTime": "2020-04-11T16:28:33.3138673Z",
+                "description": null,
+                "essentialsVersion": "1.0",
+                "alertContextVersion": "1.0"
+            },
+            "alertContext": {
+                "channels": "Admin, Operation",
+                "correlationId": "49636a0e-663c-4aa8-9780-4cd333b6c15e",
+                "eventSource": "ResourceHealth",
+                "eventTimestamp": "2020-04-11T16:27:46.276+00:00",
+                "eventDataId": "a3dc69d5-5778-4cc3-94b5-27bc98932155",
+                "level": "Informational",
+                "operationName": "Microsoft.Resourcehealth/healthevent/Activated/action",
+                "operationId": "a3dc69d5-5778-4cc3-94b5-27bc98932155",
+                "properties": {
+                    "title": "Unknown",
+                    "details": "Unknown",
+                    "currentHealthStatus": "Unavailable",
+                    "previousHealthStatus": "Available",
+                    "type": "Downtime",
+                    "cause": "Unknown"
+                },
+                "status": "Active",
+                "submissionTimestamp": "2020-04-11T16:28:33.1349226+00:00"
+            }
+        }
+    }
+}
