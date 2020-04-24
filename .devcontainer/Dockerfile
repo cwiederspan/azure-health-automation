@@ -63,7 +63,7 @@ RUN cd ~/azure-functions-core-tools \
 #ENV FUNCTIONS_CORE_TOOLS_TELEMETRY_OPTOUT=true
 
 # Used by this application as part of the functionality
-CMD mkdir -p /mnt/data/availability
+#CMD mkdir -p /mnt/data/availability
 
 # Switch back to dialog for any ad-hoc use of apt-get
 ENV DEBIAN_FRONTEND=dialog
