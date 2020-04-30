@@ -1,0 +1,18 @@
+{
+  "IsEncrypted": false,
+  "Values": {
+    "FUNCTIONS_WORKER_RUNTIME": "dotnet",
+    "AzureWebJobsStorage": "<<YOUR CONNECTION STRING GOES HERE>>",
+    
+    "IDENTITY_CONN_STRING": "RunAs=Developer;DeveloperTool=AzureCli",
+
+    "SUBSCRIPTION_ID": "<<YOUR SUBSCRIPTION ID GOES HERE>>",
+    "RESOURCE_GROUP_NAME": "cdw-analysisservices-20200401",
+    "FRONT_DOOR_NAME": "cdw-analysisservices-20200401",
+    "BACKEND_POOL_NAME": "my-azfunc-sites",
+
+    "SSAS_REGION": "southcentralus",
+    "SSAS_DB_NAME": "asazuretestsouthcentralus",
+    "BACKEND_ADDRESS": "asazuretestsouthcentralus.azurewebsites.net"
+  }
+}

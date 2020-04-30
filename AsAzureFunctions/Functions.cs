@@ -1,5 +1,4 @@
 using System;
-using System.IO;
 using System.Net;
 using System.Linq;
 using System.Net.Http;
@@ -7,14 +6,13 @@ using System.Net.Http.Headers;
 using System.Threading.Tasks;
 using System.Text.Json;
 
+using Microsoft.AspNetCore.Http;
 using Microsoft.Azure.WebJobs;
 using Microsoft.Azure.WebJobs.Extensions.Http;
 using Microsoft.Azure.Services.AppAuthentication;
-using Microsoft.AspNetCore.Http;
-using Microsoft.Extensions.Logging;
-
 using Microsoft.Azure.Management.FrontDoor;
 using Microsoft.Azure.Management.ResourceManager.Fluent;
+using Microsoft.Extensions.Logging;
 using Microsoft.Rest;
 
 namespace AsAzureFunctions {
